@@ -23,9 +23,8 @@ enum EnumAllowingAlias {
     (enum_body
       (option
         (identifier)
-        (constant
-          (bool
-            (true))))
+        (bool
+          (true)))
       (enum_field
         (identifier)
         (int_lit
@@ -41,8 +40,7 @@ enum EnumAllowingAlias {
         (enum_value_option
           (full_ident
             (identifier))
-          (constant
-            (string))))
+          (string)))
       (reserved
         (ranges
           (range

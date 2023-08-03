@@ -42,14 +42,12 @@ extend another.Message {
         (full_ident
           (identifier))
         (identifier)
-        (constant
-          (bool
-            (true))))
+        (bool
+          (true)))
       (option
         (full_ident
           (identifier))
-        (constant
-          (string)))
+        (string))
       (message
         (message_name
           (identifier))

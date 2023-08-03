@@ -19,39 +19,31 @@ option int_float_lit = 1.2345;
   (syntax)
   (option
     (identifier)
-    (constant
-      (string)))
+    (string))
   (option
     (identifier)
-    (constant
-      (bool
-        (true))))
+    (bool
+      (true)))
   (option
     (identifier)
-    (constant
-      (int_lit
-        (decimal_lit))))
+    (int_lit
+      (decimal_lit)))
   (option
     (identifier)
-    (constant
-      (int_lit
-        (octal_lit))))
+    (int_lit
+      (octal_lit)))
   (option
     (identifier)
-    (constant
-      (int_lit
-        (hex_lit))))
+    (int_lit
+      (hex_lit)))
   (option
     (identifier)
-    (constant
-      (int_lit
-        (hex_lit))))
+    (int_lit
+      (hex_lit)))
   (option
     (identifier)
-    (constant
-      (int_lit
-        (hex_lit))))
+    (int_lit
+      (hex_lit)))
   (option
     (identifier)
-    (constant
-      (float_lit))))
+    (float_lit)))

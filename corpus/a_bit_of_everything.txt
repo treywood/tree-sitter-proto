@@ -1,5 +1,5 @@
 ================================================================================
-A bit of everything
+big block literal
 ================================================================================
 
 syntax = "proto3";
@@ -47,11 +47,8 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
 	}
 	schemes: HTTP;
 	schemes: HTTPS;
-	schemes: WSS;
 	consumes: "application/json";
-	consumes: "application/x-foo-mime";
 	produces: "application/json";
-	produces: "application/x-foo-mime";
 	security_definitions: {
 		security: {
 			key: "BasicAuth";
@@ -59,155 +56,165 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
 				type: TYPE_BASIC;
 			}
 		}
-		security: {
-			key: "ApiKeyAuth";
-			value: {
-				type: TYPE_API_KEY;
-				in: IN_HEADER;
-				name: "X-API-Key";
-				extensions: {
-					key: "x-amazon-apigateway-authtype";
-					value {
-						string_value: "oauth2";
-					}
-				}
-				extensions: {
-					key: "x-amazon-apigateway-authorizer";
-					value {
-						struct_value {
-							fields {
-								key: "type";
-								value {
-									string_value: "token";
-								}
-							}
-							fields {
-								key: "authorizerResultTtlInSeconds";
-								value {
-									number_value: 60;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		security: {
-			key: "OAuth2";
-			value: {
-				type: TYPE_OAUTH2;
-				flow: FLOW_ACCESS_CODE;
-				authorization_url: "https://example.com/oauth/authorize";
-				token_url: "https://example.com/oauth/token";
-				scopes: {
-					scope: {
-						key: "read";
-						value: "Grants read access";
-					}
-					scope: {
-						key: "write";
-						value: "Grants write access";
-					}
-					scope: {
-						key: "admin";
-						value: "Grants read and write access to administrative information";
-					}
-				}
-			}
-		}
 	}
 	security: {
 		security_requirement: {
 			key: "BasicAuth";
 			value: {};
 		}
-		security_requirement: {
-			key: "ApiKeyAuth";
-			value: {};
-		}
-	}
-	security: {
-		security_requirement: {
-			key: "OAuth2";
-			value: {
-				scope: "read";
-				scope: "write";
-			}
-		}
-		security_requirement: {
-			key: "ApiKeyAuth";
-			value: {};
-		}
-	}
-	responses: {
-		key: "403";
-		value: {
-			description: "Returned when the user does not have permission to access the resource.";
-		}
-	}
-	responses: {
-		key: "404";
-		value: {
-			description: "Returned when the resource does not exist.";
-			schema: {
-				json_schema: {
-					type: STRING;
-				}
-			}
-		}
-	}
-	responses: {
-		key: "418";
-		value: {
-			description: "I'm a teapot.";
-			schema: {
-				json_schema: {
-					ref: ".grpc.gateway.examples.internal.proto.examplepb.NumericEnum";
-				}
-			}
-		}
-	}
-	responses: {
-		key: "500";
-		value: {
-			description: "Server error";
-			headers: {
-				key: "X-Correlation-Id"
-				value: {
-					description: "Unique event identifier for server requests"
-					type: "string"
-					format: "uuid"
-					default: "\"2438ac3c-37eb-4902-adef-ed16b4431030\""
-					pattern: "^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$"
-				}
-			};
-			schema: {
-				json_schema: {
-					ref: ".grpc.gateway.examples.internal.proto.examplepb.ErrorResponse";
-				}
-			}
-		}
-	}
-	extensions: {
-		key: "x-grpc-gateway-foo";
-		value {
-			string_value: "bar";
-		}
-	}
-	extensions: {
-		key: "x-grpc-gateway-baz-list";
-		value {
-			list_value: {
-				values: {
-					string_value: "one";
-				}
-				values: {
-					bool_value: true;
-				}
-			}
-		}
 	}
 };
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax)
+  (option
+    (identifier)
+    (string))
+  (package
+    (full_ident
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)))
+  (import
+    path: (string))
+  (import
+    path: (string))
+  (import
+    path: (string))
+  (import
+    path: (string))
+  (import
+    path: (string))
+  (import
+    path: (string))
+  (import
+    path: (string))
+  (import
+    path: (string))
+  (import
+    path: (string))
+  (import
+    path: (string))
+  (import
+    path: (string))
+  (import
+    path: (string))
+  (option
+    (full_ident
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier))
+    (block_lit
+      (block_field
+        key: (identifier)
+        value: (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (string))))))))
+      (block_field
+        key: (full_ident
+          (identifier)
+          (identifier)))
+      (comment)
+      (block_field
+        key: (identifier)
+        value: (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (string))))
+      (block_field
+        key: (identifier)
+        value: (full_ident
+          (identifier)))
+      (block_field
+        key: (identifier)
+        value: (full_ident
+          (identifier)))
+      (block_field
+        key: (identifier)
+        value: (string))
+      (block_field
+        key: (identifier)
+        value: (string))
+      (block_field
+        key: (identifier)
+        value: (block_lit
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (full_ident
+                      (identifier)))))))))
+      (block_field
+        key: (identifier)
+        value: (block_lit
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (block_lit)))))))))
+
+================================================================================
+messages
+================================================================================
+syntax = "proto2";
 
 message ErrorResponse{
 	string correlationId = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
@@ -705,458 +712,8 @@ service AnotherServiceWithNoBindings {
 }
 
 --------------------------------------------------------------------------------
-
 (source_file
   (syntax)
-  (option
-    (identifier)
-    (constant
-      (string)))
-  (package
-    (full_ident
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)))
-  (import
-    (string))
-  (import
-    (string))
-  (import
-    (string))
-  (import
-    (string))
-  (import
-    (string))
-  (import
-    (string))
-  (import
-    (string))
-  (import
-    (string))
-  (import
-    (string))
-  (import
-    (string))
-  (import
-    (string))
-  (import
-    (string))
-  (option
-    (full_ident
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier)
-      (identifier))
-    (constant
-      (block_lit
-        (identifier)
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (string))))))))
-        (full_ident
-          (identifier)
-          (identifier))
-        (comment)
-        (identifier)
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (string))))
-        (identifier)
-        (constant
-          (full_ident
-            (identifier)))
-        (identifier)
-        (constant
-          (full_ident
-            (identifier)))
-        (identifier)
-        (constant
-          (full_ident
-            (identifier)))
-        (identifier)
-        (constant
-          (string))
-        (identifier)
-        (constant
-          (string))
-        (identifier)
-        (constant
-          (string))
-        (identifier)
-        (constant
-          (string))
-        (identifier)
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (full_ident
-                        (identifier)))))))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (full_ident
-                        (identifier)))
-                    (identifier)
-                    (constant
-                      (full_ident
-                        (identifier)))
-                    (identifier)
-                    (constant
-                      (string))
-                    (identifier)
-                    (constant
-                      (block_lit
-                        (identifier)
-                        (constant
-                          (string))
-                        (identifier)
-                        (constant
-                          (block_lit
-                            (identifier)
-                            (constant
-                              (string))))))
-                    (identifier)
-                    (constant
-                      (block_lit
-                        (identifier)
-                        (constant
-                          (string))
-                        (identifier)
-                        (constant
-                          (block_lit
-                            (identifier)
-                            (constant
-                              (block_lit
-                                (identifier)
-                                (constant
-                                  (block_lit
-                                    (identifier)
-                                    (constant
-                                      (string))
-                                    (identifier)
-                                    (constant
-                                      (block_lit
-                                        (identifier)
-                                        (constant
-                                          (string))))))
-                                (identifier)
-                                (constant
-                                  (block_lit
-                                    (identifier)
-                                    (constant
-                                      (string))
-                                    (identifier)
-                                    (constant
-                                      (block_lit
-                                        (identifier)
-                                        (constant
-                                          (int_lit
-                                            (decimal_lit)))))))))))))))))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (full_ident
-                        (identifier)))
-                    (identifier)
-                    (constant
-                      (full_ident
-                        (identifier)))
-                    (identifier)
-                    (constant
-                      (string))
-                    (identifier)
-                    (constant
-                      (string))
-                    (identifier)
-                    (constant
-                      (block_lit
-                        (identifier)
-                        (constant
-                          (block_lit
-                            (identifier)
-                            (constant
-                              (string))
-                            (identifier)
-                            (constant
-                              (string))))
-                        (identifier)
-                        (constant
-                          (block_lit
-                            (identifier)
-                            (constant
-                              (string))
-                            (identifier)
-                            (constant
-                              (string))))
-                        (identifier)
-                        (constant
-                          (block_lit
-                            (identifier)
-                            (constant
-                              (string))
-                            (identifier)
-                            (constant
-                              (string))))))))))))
-        (identifier)
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit))))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit))))))
-        (identifier)
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (string))
-                    (identifier)
-                    (constant
-                      (string))))))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit))))))
-        (identifier)
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))))))
-        (identifier)
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (block_lit
-                        (identifier)
-                        (constant
-                          (full_ident
-                            (identifier)))))))))))
-        (identifier)
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (block_lit
-                        (identifier)
-                        (constant
-                          (string))))))))))
-        (identifier)
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (string))
-                    (identifier)
-                    (constant
-                      (block_lit
-                        (identifier)
-                        (constant
-                          (string))
-                        (identifier)
-                        (constant
-                          (string))
-                        (identifier)
-                        (constant
-                          (string))
-                        (identifier)
-                        (constant
-                          (string
-                            (escape_sequence)
-                            (escape_sequence)))
-                        (identifier)
-                        (constant
-                          (string))))))
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (block_lit
-                        (identifier)
-                        (constant
-                          (string))))))))))
-        (identifier)
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))))))
-        (identifier)
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (block_lit
-                        (identifier)
-                        (constant
-                          (string))))
-                    (identifier)
-                    (constant
-                      (block_lit
-                        (identifier)
-                        (constant
-                          (bool
-                            (true))))))))))))))
   (message
     (message_name
       (identifier))
@@ -1175,25 +732,24 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string
-                    (escape_sequence)
-                    (escape_sequence))))))))
+            (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string
+                  (escape_sequence)
+                  (escape_sequence)))))))
       (field
         (type
           (message_or_enum_type
@@ -1220,20 +776,19 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string)))))))
+            (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (field
         (type)
         (identifier)
@@ -1248,17 +803,16 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string)))))))))
+            (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))))
   (comment)
   (message
     (message_name
@@ -1271,40 +825,37 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))
-                (constant
-                  (string))
-                (constant
-                  (string))))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))))
-            (identifier)
-            (constant
-              (string
-                (escape_sequence)
-                (escape_sequence)
-                (escape_sequence)
-                (escape_sequence))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string)
+                value: (string)
+                value: (string))))
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))
+          (block_field
+            key: (identifier)
+            value: (string
+              (escape_sequence)
+              (escape_sequence)
+              (escape_sequence)
+              (escape_sequence)))))
       (comment)
       (message
         (message_name
@@ -1317,15 +868,14 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string
-                    (escape_sequence)
-                    (escape_sequence)
-                    (escape_sequence)
-                    (escape_sequence))))))
+            (block_lit
+              (block_field
+                key: (identifier)
+                value: (string
+                  (escape_sequence)
+                  (escape_sequence)
+                  (escape_sequence)
+                  (escape_sequence)))))
           (comment)
           (field
             (type)
@@ -1371,11 +921,10 @@ service AnotherServiceWithNoBindings {
                   (identifier)
                   (identifier)
                   (identifier))
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (string)))))))))
+                (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (string))))))))
       (field
         (type
           (message_or_enum_type
@@ -1398,15 +947,14 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (int_lit
-                    (decimal_lit))))))))
+            (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (int_lit
+                  (decimal_lit)))))))
       (field
         (type
           (message_or_enum_type
@@ -1429,17 +977,16 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string)))))))
+            (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (field
         (type)
         (identifier)
@@ -1644,14 +1191,13 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string)))))))
+            (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (comment)
       (field
         (type
@@ -1669,14 +1215,13 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string)))))))
+            (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (comment)
       (field
         (type)
@@ -1692,14 +1237,13 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string)))))))
+            (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (comment)
       (field
         (type
@@ -1717,14 +1261,13 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string)))))))
+            (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (comment)
       (field
         (type
@@ -1742,14 +1285,13 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string)))))))
+            (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (field
         (type)
         (identifier)
@@ -1764,12 +1306,11 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (full_ident
-                    (identifier))))))))
+            (block_lit
+              (block_field
+                key: (identifier)
+                value: (full_ident
+                  (identifier)))))))
       (comment)
       (field
         (type)
@@ -1783,9 +1324,8 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (full_ident
-                (identifier))))))
+            (full_ident
+              (identifier)))))
       (comment)
       (field
         (type)
@@ -1799,9 +1339,8 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (full_ident
-                (identifier))))))
+            (full_ident
+              (identifier)))))
       (field
         (type)
         (identifier)
@@ -1820,15 +1359,14 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string
-                (escape_sequence)
-                (escape_sequence)
-                (escape_sequence)
-                (escape_sequence))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string
+              (escape_sequence)
+              (escape_sequence)
+              (escape_sequence)
+              (escape_sequence)))))
       (comment)
       (field
         (type)
@@ -2109,9 +1647,8 @@ service AnotherServiceWithNoBindings {
               (identifier)
               (identifier)
               (identifier))
-            (constant
-              (full_ident
-                (identifier))))))
+            (full_ident
+              (identifier)))))
       (comment)
       (field
         (type
@@ -2143,23 +1680,38 @@ service AnotherServiceWithNoBindings {
         (identifier)
         (identifier)
         (identifier))
-      (constant
+      (block_lit
+        (block_field
+          key: (identifier)
+          value: (string))
+        (block_field
+          key: (identifier)
+          value: (block_lit
+            (block_field
+              key: (identifier)
+              value: (string))
+            (block_field
+              key: (identifier)
+              value: (string))))))
+    (comment)
+    (comment)
+    (comment)
+    (rpc
+      (rpc_name
+        (identifier))
+      (message_or_enum_type
+        (identifier))
+      (message_or_enum_type
+        (identifier))
+      (option
+        (full_ident
+          (identifier)
+          (identifier)
+          (identifier))
         (block_lit
-          (identifier)
-          (constant
-            (string))
-          (identifier)
-          (constant
-            (block_lit
-              (identifier)
-              (constant
-                (string))
-              (identifier)
-              (constant
-                (string)))))))
-    (comment)
-    (comment)
-    (comment)
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2172,31 +1724,13 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (option
-        (full_ident
-          (identifier)
-          (identifier)
-          (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (comment)
     (rpc
       (rpc_name
@@ -2210,14 +1744,13 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2230,14 +1763,13 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2256,33 +1788,10 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        (full_ident
-          (identifier)
-          (identifier)
-          (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2297,31 +1806,50 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))))
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (string)))))
+    (rpc
+      (rpc_name
+        (identifier))
+      (message_or_enum_type
+        (identifier))
+      (message_or_enum_type
+        (identifier)
+        (identifier)
+        (identifier))
+      (option
+        (full_ident
+          (identifier)
+          (identifier)
+          (identifier))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string)))))))
     (rpc
       (rpc_name
         (identifier))
@@ -2342,11 +1870,10 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string)))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))))
       (option
         (full_ident
           (identifier)
@@ -2354,48 +1881,47 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (string))
-                    (identifier)
-                    (constant
-                      (block_lit))))
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (string))
-                    (identifier)
-                    (constant
-                      (block_lit
-                        (identifier)
-                        (constant
-                          (string))
-                        (identifier)
-                        (constant
-                          (string))))))))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (bool
-                        (true)))))))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (string))
+                  (block_field
+                    key: (identifier)
+                    value: (block_lit))))
+              (block_field
+                key: (identifier)
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (string))
+                  (block_field
+                    key: (identifier)
+                    value: (block_lit
+                      (block_field
+                        key: (identifier)
+                        value: (string))
+                      (block_field
+                        key: (identifier)
+                        value: (string))))))))
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (bool
+                      (true))))))))))
     (rpc
       (rpc_name
         (identifier))
@@ -2410,11 +1936,10 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string)))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))))
       (option
         (full_ident
           (identifier)
@@ -2422,25 +1947,24 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (bool
-                (true)))
-            (comment)
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))))
-            (identifier)
-            (constant
-              (block_lit))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (bool
+              (true)))
+          (comment)
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))
+          (block_field
+            key: (identifier)
+            value: (block_lit)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2453,11 +1977,10 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (comment)
     (comment)
     (comment)
@@ -2489,26 +2012,25 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string)))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (option
         (full_ident
           (identifier)
@@ -2516,92 +2038,91 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
           (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (string))))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (block_lit
-                        (identifier)
-                        (constant
-                          (string))
-                        (identifier)
-                        (constant
-                          (string))))))))
-            (identifier)
-            (constant
-              (block_lit
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (string))
-                    (identifier)
-                    (constant
-                      (block_lit
-                        (identifier)
-                        (constant
-                          (string))
-                        (identifier)
-                        (constant
-                          (block_lit
-                            (identifier)
-                            (constant
-                              (int_lit
+            (block_field
+              key: (identifier)
+              value: (string))
+            (block_field
+              key: (identifier)
+              value: (string))
+            (block_field
+              key: (identifier)
+              value: (string))
+            (block_field
+              key: (identifier)
+              value: (block_lit
+                (block_field
+                  key: (identifier)
+                  value: (string))
+                (block_field
+                  key: (identifier)
+                  value: (string))))
+            (block_field
+              key: (identifier)
+              value: (block_lit
+                (block_field
+                  key: (identifier)
+                  value: (string))
+                (block_field
+                  key: (identifier)
+                  value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (block_lit
+                      (block_field
+                        key: (identifier)
+                        value: (string))
+                      (block_field
+                        key: (identifier)
+                        value: (string))))))))
+            (block_field
+              key: (identifier)
+              value: (block_lit
+                (block_field
+                  key: (identifier)
+                  value: (string))
+                (block_field
+                  key: (identifier)
+                  value: (block_lit
+                    (block_field
+                      key: (identifier)
+                      value: (string))
+                    (block_field
+                      key: (identifier)
+                      value: (block_lit
+                        (block_field
+                          key: (identifier)
+                          value: (string))
+                        (block_field
+                          key: (identifier)
+                          value: (block_lit
+                            (block_field
+                              key: (identifier)
+                              value: (int_lit
                                 (decimal_lit)))))))))))
-            (identifier)
-            (constant
-              (block_lit
+            (block_field
+              key: (identifier)
+              value: (block_lit
                 (comment)
-                (identifier)
-                (constant
-                  (string))
-                (identifier)
-                (constant
-                  (block_lit
-                    (identifier)
-                    (constant
-                      (string))
-                    (identifier)
-                    (constant
-                      (block_lit
-                        (identifier)
-                        (constant
-                          (block_lit
-                            (identifier)
-                            (constant
-                              (full_ident
-                                (identifier)))))))))))))))
+                (block_field
+                  key: (identifier)
+                  value: (string))
+                (block_field
+                  key: (identifier)
+                  value: (block_lit
+                    (block_field
+                      key: (identifier)
+                      value: (string))
+                    (block_field
+                      key: (identifier)
+                      value: (block_lit
+                        (block_field
+                          key: (identifier)
+                          value: (block_lit
+                            (block_field
+                              key: (identifier)
+                              value: (full_ident
+                                (identifier))))))))))))))
     (rpc
       (rpc_name
         (identifier))
@@ -2614,14 +2135,13 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2649,11 +2169,10 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2670,11 +2189,10 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2689,14 +2207,13 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2711,14 +2228,13 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2731,11 +2247,10 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2748,11 +2263,10 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2765,14 +2279,13 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2789,11 +2302,10 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string)))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))))
       (option
         (full_ident
           (identifier)
@@ -2801,11 +2313,10 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2821,11 +2332,10 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2841,11 +2351,10 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string)))))
     (rpc
       (rpc_name
         (identifier))
@@ -2860,11 +2369,10 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string)))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))))))
   (comment)
   (service
     (service_name
@@ -2885,11 +2393,10 @@ service AnotherServiceWithNoBindings {
           (identifier)
           (identifier)
           (identifier))
-        (constant
-          (block_lit
-            (identifier)
-            (constant
-              (string)))))))
+        (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))))))
   (service
     (service_name
       (identifier))
