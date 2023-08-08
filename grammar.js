@@ -58,21 +58,18 @@ module.exports = grammar({
     // optionName = ( ident | "(" fullIdent ")" ) { "." ident }
     option: $ => seq(
       'option',
-      $._option_name,
+      field('name', $.option_name),
       '=',
-      $._constant,
+      field('value', $._constant),
       ';',
     ),
 
-    _option_name: $ => seq(
-      choice(
-        $.identifier,
+    option_name: $ => choice(
+      $.identifier,
+      seq(
         seq('(', $.full_ident, ')'),
+        repeat(seq('.', $.identifier)),
       ),
-      repeat(seq(
-        '.',
-        $.identifier,
-      )),
     ),
 
     // enum = "enum" enumName enumBody
@@ -101,21 +98,9 @@ module.exports = grammar({
     enum_field: $ => seq(
       $.identifier,
       '=',
-      optional('-'),
-      $.int_lit,
-      optional(seq(
-        '[',
-        $.enum_value_option,
-        repeat(seq(',', $.enum_value_option)),
-        ']',
-      )),
+      $.field_number,
+      optional(seq('[', $.field_options,']')),
       ';',
-    ),
-
-    enum_value_option: $ => seq(
-      $._option_name,
-      '=',
-      $._constant,
     ),
 
     // message = "message" messageName messageBody
@@ -174,9 +159,9 @@ module.exports = grammar({
     ),
 
     field_option: $ => seq(
-      $._option_name,
+      field('name', $.option_name),
       '=',
-      $._constant,
+      field('value', $._constant),
     ),
 
     // oneof = "oneof" oneofName "{" { option | oneofField | emptyStatement } "}"

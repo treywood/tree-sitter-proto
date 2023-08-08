@@ -171,15 +171,15 @@
       "required": true,
       "types": [
         {
-          "type": "enum_value_option",
+          "type": "field_number",
+          "named": true
+        },
+        {
+          "type": "field_options",
           "named": true
         },
         {
           "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "int_lit",
           "named": true
         }
       ]
@@ -195,45 +195,6 @@
       "types": [
         {
           "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "enum_value_option",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "block_lit",
-          "named": true
-        },
-        {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "float_lit",
-          "named": true
-        },
-        {
-          "type": "full_ident",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "int_lit",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         }
       ]
@@ -337,40 +298,55 @@
   {
     "type": "field_option",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "block_lit",
-          "named": true
-        },
-        {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "float_lit",
-          "named": true
-        },
-        {
-          "type": "full_ident",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "int_lit",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "option_name",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "block_lit",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "float_lit",
+            "named": true
+          },
+          {
+            "type": "full_ident",
+            "named": true
+          },
+          {
+            "type": "int_lit",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -635,37 +611,71 @@
   {
     "type": "option",
     "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "option_name",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "block_lit",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "float_lit",
+            "named": true
+          },
+          {
+            "type": "full_ident",
+            "named": true
+          },
+          {
+            "type": "int_lit",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "option_name",
+    "named": true,
     "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "block_lit",
-          "named": true
-        },
-        {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "float_lit",
-          "named": true
-        },
-        {
           "type": "full_ident",
           "named": true
         },
         {
           "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "int_lit",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         }
       ]

@@ -39,15 +39,17 @@ extend another.Message {
       (identifier))
     (message_body
       (option
-        (full_ident
-          (identifier))
-        (identifier)
-        (bool
-          (true)))
+        name: (option_name
+                (full_ident
+                  (identifier))
+                (identifier))
+        value: (bool
+                (true)))
       (option
-        (full_ident
-          (identifier))
-        (string))
+        name: (option_name
+                (full_ident
+                  (identifier)))
+        value: (string))
       (message
         (message_name
           (identifier))

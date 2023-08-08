@@ -167,16 +167,24 @@
           "value": "option"
         },
         {
-          "type": "SYMBOL",
-          "name": "_option_name"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "option_name"
+          }
         },
         {
           "type": "STRING",
           "value": "="
         },
         {
-          "type": "SYMBOL",
-          "name": "_constant"
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_constant"
+          }
         },
         {
           "type": "STRING",
@@ -184,16 +192,16 @@
         }
       ]
     },
-    "_option_name": {
-      "type": "SEQ",
+    "option_name": {
+      "type": "CHOICE",
       "members": [
         {
-          "type": "CHOICE",
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "SEQ",
           "members": [
-            {
-              "type": "SYMBOL",
-              "name": "identifier"
-            },
             {
               "type": "SEQ",
               "members": [
@@ -210,24 +218,24 @@
                   "value": ")"
                 }
               ]
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": "."
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "identifier"
+                  }
+                ]
+              }
             }
           ]
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "."
-              },
-              {
-                "type": "SYMBOL",
-                "name": "identifier"
-              }
-            ]
-          }
         }
       ]
     },
@@ -301,20 +309,8 @@
           "value": "="
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "-"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
           "type": "SYMBOL",
-          "name": "int_lit"
+          "name": "field_number"
         },
         {
           "type": "CHOICE",
@@ -328,23 +324,7 @@
                 },
                 {
                   "type": "SYMBOL",
-                  "name": "enum_value_option"
-                },
-                {
-                  "type": "REPEAT",
-                  "content": {
-                    "type": "SEQ",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": ","
-                      },
-                      {
-                        "type": "SYMBOL",
-                        "name": "enum_value_option"
-                      }
-                    ]
-                  }
+                  "name": "field_options"
                 },
                 {
                   "type": "STRING",
@@ -360,23 +340,6 @@
         {
           "type": "STRING",
           "value": ";"
-        }
-      ]
-    },
-    "enum_value_option": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_option_name"
-        },
-        {
-          "type": "STRING",
-          "value": "="
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_constant"
         }
       ]
     },
@@ -591,16 +554,24 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "_option_name"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "option_name"
+          }
         },
         {
           "type": "STRING",
           "value": "="
         },
         {
-          "type": "SYMBOL",
-          "name": "_constant"
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_constant"
+          }
         }
       ]
     },
