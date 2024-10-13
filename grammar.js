@@ -1,7 +1,7 @@
 const
   letter = /[a-zA-Z]/,
-  decimal_digit = /[0-9]/
-  octal_digit = /[0-7]/
+  decimal_digit = /[0-9]/,
+  octal_digit = /[0-7]/,
   hex_digit = /[0-9A-Fa-f]/
 
 function array_of(content) {
@@ -157,7 +157,7 @@ module.exports = grammar({
     field: $ => seq(
       // This isn't allowed according to the spec and yet the proto3 compiler
       // accepts it so we put it here for parsing.
-      optional(choice('optional','required')),
+      optional(choice('optional', 'required')),
 
       optional('repeated'),
       $.type,
