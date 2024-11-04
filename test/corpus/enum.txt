@@ -23,9 +23,9 @@ enum EnumAllowingAlias {
     (enum_body
       (option
         name: (option_name
-                (identifier))
+          (identifier))
         value: (bool
-                (true)))
+          (true)))
       (enum_field
         (identifier)
         (field_number
@@ -44,8 +44,8 @@ enum EnumAllowingAlias {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)))
+              (full_ident
+                (identifier)))
             value: (string))))
       (reserved
         (ranges

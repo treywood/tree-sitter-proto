@@ -71,7 +71,7 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
   (syntax)
   (option
     name: (option_name
-            (identifier))
+      (identifier))
     value: (string))
   (package
     (full_ident
@@ -107,12 +107,12 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
     path: (string))
   (option
     name: (option_name
-            (full_ident
-              (identifier)
-              (identifier)
-              (identifier)
-              (identifier)
-              (identifier)))
+      (full_ident
+        (identifier)
+        (identifier)
+        (identifier)
+        (identifier)
+        (identifier)))
     value: (block_lit
       (block_field
         key: (identifier)
@@ -714,6 +714,7 @@ service AnotherServiceWithNoBindings {
 }
 
 --------------------------------------------------------------------------------
+
 (source_file
   (syntax)
   (message
@@ -729,30 +730,30 @@ service AnotherServiceWithNoBindings {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string
-                        (escape_sequence)
-                        (escape_sequence)))))))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string
+                  (escape_sequence)
+                  (escape_sequence)))))))
       (field
         (type
           (message_or_enum_type
@@ -774,25 +775,25 @@ service AnotherServiceWithNoBindings {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))))))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (field
         (type)
         (identifier)
@@ -802,22 +803,22 @@ service AnotherServiceWithNoBindings {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))))))))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))))
   (comment)
   (message
     (message_name
@@ -825,12 +826,12 @@ service AnotherServiceWithNoBindings {
     (message_body
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -869,12 +870,12 @@ service AnotherServiceWithNoBindings {
         (message_body
           (option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
               (block_field
                 key: (identifier)
@@ -925,16 +926,16 @@ service AnotherServiceWithNoBindings {
             (field_options
               (field_option
                 name: (option_name
-                        (full_ident
-                          (identifier)
-                          (identifier)
-                          (identifier)
-                          (identifier)
-                          (identifier)))
+                  (full_ident
+                    (identifier)
+                    (identifier)
+                    (identifier)
+                    (identifier)
+                    (identifier)))
                 value: (block_lit
-                        (block_field
-                          key: (identifier)
-                          value: (string))))))))
+                  (block_field
+                    key: (identifier)
+                    value: (string))))))))
       (field
         (type
           (message_or_enum_type
@@ -952,20 +953,20 @@ service AnotherServiceWithNoBindings {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (int_lit
-                        (decimal_lit)))))))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (int_lit
+                  (decimal_lit)))))))
       (field
         (type
           (message_or_enum_type
@@ -983,22 +984,22 @@ service AnotherServiceWithNoBindings {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))))))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (field
         (type)
         (identifier)
@@ -1198,19 +1199,19 @@ service AnotherServiceWithNoBindings {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))))))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (comment)
       (field
         (type
@@ -1223,19 +1224,19 @@ service AnotherServiceWithNoBindings {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))))))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (comment)
       (field
         (type)
@@ -1246,19 +1247,19 @@ service AnotherServiceWithNoBindings {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))))))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (comment)
       (field
         (type
@@ -1271,19 +1272,19 @@ service AnotherServiceWithNoBindings {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))))))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (comment)
       (field
         (type
@@ -1296,19 +1297,19 @@ service AnotherServiceWithNoBindings {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (string))))))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
       (field
         (type)
         (identifier)
@@ -1318,17 +1319,17 @@ service AnotherServiceWithNoBindings {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
-                    (block_field
-                      key: (identifier)
-                      value: (full_ident
-                        (identifier)))))))
+              (block_field
+                key: (identifier)
+                value: (full_ident
+                  (identifier)))))))
       (comment)
       (field
         (type)
@@ -1339,12 +1340,12 @@ service AnotherServiceWithNoBindings {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (full_ident
-                    (identifier)))))
+              (identifier)))))
       (comment)
       (field
         (type)
@@ -1355,12 +1356,12 @@ service AnotherServiceWithNoBindings {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (full_ident
-                    (identifier)))))
+              (identifier)))))
       (field
         (type)
         (identifier)
@@ -1374,12 +1375,12 @@ service AnotherServiceWithNoBindings {
     (message_body
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -1667,12 +1668,12 @@ service AnotherServiceWithNoBindings {
         (field_options
           (field_option
             name: (option_name
-                    (full_ident
-                      (identifier)
-                      (identifier)
-                      (identifier)))
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (full_ident
-                    (identifier)))))
+              (identifier)))))
       (comment)
       (field
         (type
@@ -1699,12 +1700,12 @@ service AnotherServiceWithNoBindings {
       (identifier))
     (option
       name: (option_name
-              (full_ident
-                (identifier)
-                (identifier)
-                (identifier)
-                (identifier)
-                (identifier)))
+        (full_ident
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)))
       value: (block_lit
         (block_field
           key: (identifier)
@@ -1730,10 +1731,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -1747,10 +1748,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -1768,10 +1769,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -1788,10 +1789,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -1814,10 +1815,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -1833,10 +1834,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -1855,10 +1856,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -1899,22 +1900,22 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
             value: (string))))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -1967,22 +1968,22 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
             value: (string))))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -2010,10 +2011,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -2046,10 +2047,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -2071,40 +2072,40 @@ service AnotherServiceWithNoBindings {
                 value: (string))))))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
-            (block_field
-              key: (identifier)
-              value: (string))
-            (block_field
-              key: (identifier)
-              value: (string))
-            (block_field
-              key: (identifier)
-              value: (string))
-            (block_field
-              key: (identifier)
-              value: (block_lit
-                (block_field
-                  key: (identifier)
-                  value: (string))
-                (block_field
-                  key: (identifier)
-                  value: (string))))
-            (block_field
-              key: (identifier)
-              value: (block_lit
-                (block_field
-                  key: (identifier)
-                  value: (string))
-                (block_field
-                  key: (identifier)
-                  value: (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (block_lit
                   (block_field
                     key: (identifier)
                     value: (block_lit
@@ -2114,54 +2115,54 @@ service AnotherServiceWithNoBindings {
                       (block_field
                         key: (identifier)
                         value: (string))))))))
-            (block_field
-              key: (identifier)
-              value: (block_lit
-                (block_field
-                  key: (identifier)
-                  value: (string))
-                (block_field
-                  key: (identifier)
-                  value: (block_lit
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (block_lit
-                        (block_field
-                          key: (identifier)
-                          value: (string))
-                        (block_field
-                          key: (identifier)
-                          value: (block_lit
-                            (block_field
-                              key: (identifier)
-                              value: (int_lit
-                                (decimal_lit)))))))))))
-            (block_field
-              key: (identifier)
-              value: (block_lit
-                (comment)
-                (block_field
-                  key: (identifier)
-                  value: (string))
-                (block_field
-                  key: (identifier)
-                  value: (block_lit
-                    (block_field
-                      key: (identifier)
-                      value: (string))
-                    (block_field
-                      key: (identifier)
-                      value: (block_lit
-                        (block_field
-                          key: (identifier)
-                          value: (block_lit
-                            (block_field
-                              key: (identifier)
-                              value: (full_ident
-                                (identifier))))))))))))))
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (string))
+                  (block_field
+                    key: (identifier)
+                    value: (block_lit
+                      (block_field
+                        key: (identifier)
+                        value: (string))
+                      (block_field
+                        key: (identifier)
+                        value: (block_lit
+                          (block_field
+                            key: (identifier)
+                            value: (int_lit
+                              (decimal_lit)))))))))))
+          (block_field
+            key: (identifier)
+            value: (block_lit
+              (comment)
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (string))
+                  (block_field
+                    key: (identifier)
+                    value: (block_lit
+                      (block_field
+                        key: (identifier)
+                        value: (block_lit
+                          (block_field
+                            key: (identifier)
+                            value: (full_ident
+                              (identifier))))))))))))))
     (rpc
       (rpc_name
         (identifier))
@@ -2171,10 +2172,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -2206,10 +2207,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -2227,10 +2228,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -2246,32 +2247,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -2285,13 +2264,35 @@ service AnotherServiceWithNoBindings {
       (message_or_enum_type
         (identifier))
       (message_or_enum_type
+        (identifier)
+        (identifier)
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
+        value: (block_lit
+          (block_field
+            key: (identifier)
+            value: (string))
+          (block_field
+            key: (identifier)
+            value: (string)))))
+    (rpc
+      (rpc_name
+        (identifier))
+      (message_or_enum_type
+        (identifier))
+      (message_or_enum_type
+        (identifier))
+      (option
+        name: (option_name
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -2305,10 +2306,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -2322,10 +2323,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -2346,22 +2347,22 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
             value: (string))))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -2378,10 +2379,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -2398,10 +2399,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -2417,10 +2418,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)
@@ -2442,10 +2443,10 @@ service AnotherServiceWithNoBindings {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
           (block_field
             key: (identifier)

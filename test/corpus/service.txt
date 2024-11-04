@@ -29,25 +29,25 @@ service ABitOfEverythingService {
       (identifier))
     (option
       name: (option_name
-              (full_ident
-                (identifier)
-                (identifier)
-                (identifier)
-                (identifier)
-                (identifier)))
+        (full_ident
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)))
       value: (block_lit
-              (block_field
-                key: (identifier)
-                value: (string))
-              (block_field
-                key: (identifier)
-                value: (block_lit
-                  (block_field
-                    key: (identifier)
-                    value: (string))
-                  (block_field
-                    key: (identifier)
-                    value: (string))))))
+        (block_field
+          key: (identifier)
+          value: (string))
+        (block_field
+          key: (identifier)
+          value: (block_lit
+            (block_field
+              key: (identifier)
+              value: (string))
+            (block_field
+              key: (identifier)
+              value: (string))))))
     (rpc
       (rpc_name
         (identifier))
@@ -57,11 +57,11 @@ service ABitOfEverythingService {
         (identifier))
       (option
         name: (option_name
-                (full_ident
-                  (identifier)
-                  (identifier)
-                  (identifier)))
+          (full_ident
+            (identifier)
+            (identifier)
+            (identifier)))
         value: (block_lit
-                (block_field
-                  key: (identifier)
-                  value: (string)))))))
+          (block_field
+            key: (identifier)
+            value: (string)))))))
