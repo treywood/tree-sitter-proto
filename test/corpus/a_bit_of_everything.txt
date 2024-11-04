@@ -904,13 +904,15 @@ service AnotherServiceWithNoBindings {
             (enum_body
               (comment)
               (enum_field
-                (identifier)
+                (enum_variant_name
+                  (identifier))
                 (field_number
                   (int_lit
                     (octal_lit))))
               (comment)
               (enum_field
-                (identifier)
+                (enum_variant_name
+                  (identifier))
                 (field_number
                   (int_lit
                     (decimal_lit))))))
@@ -1537,13 +1539,15 @@ service AnotherServiceWithNoBindings {
     (enum_body
       (comment)
       (enum_field
-        (identifier)
+        (enum_variant_name
+          (identifier))
         (field_number
           (int_lit
             (octal_lit))))
       (comment)
       (enum_field
-        (identifier)
+        (enum_variant_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))))

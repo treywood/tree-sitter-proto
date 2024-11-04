@@ -302,7 +302,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "enum_variant_name"
         },
         {
           "type": "STRING",
@@ -1176,6 +1176,10 @@
       ]
     },
     "rpc_name": {
+      "type": "SYMBOL",
+      "name": "identifier"
+    },
+    "enum_variant_name": {
       "type": "SYMBOL",
       "name": "identifier"
     },

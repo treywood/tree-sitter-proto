@@ -171,13 +171,28 @@
       "required": true,
       "types": [
         {
+          "type": "enum_variant_name",
+          "named": true
+        },
+        {
           "type": "field_number",
           "named": true
         },
         {
           "type": "field_options",
           "named": true
-        },
+        }
+      ]
+    }
+  },
+  {
+    "type": "enum_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
         {
           "type": "identifier",
           "named": true
@@ -186,7 +201,7 @@
     }
   },
   {
-    "type": "enum_name",
+    "type": "enum_variant_name",
     "named": true,
     "fields": {},
     "children": {

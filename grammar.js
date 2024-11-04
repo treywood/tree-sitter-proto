@@ -96,7 +96,7 @@ module.exports = grammar({
     ),
 
     enum_field: $ => seq(
-      $.identifier,
+      $.enum_variant_name,
       '=',
       $.field_number,
       optional(seq('[', $.field_options,']')),
@@ -327,6 +327,7 @@ module.exports = grammar({
     ),
 
     rpc_name: $ => $.identifier,
+    enum_variant_name: $ => $.identifier,
 
     // constant = fullIdent | ( [ "-" | "+" ] intLit ) | ( [ "-" | "+" ] floatLit ) | strLit | boolLit
     _constant: $ => choice(

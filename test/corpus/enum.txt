@@ -27,17 +27,20 @@ enum EnumAllowingAlias {
         value: (bool
           (true)))
       (enum_field
-        (identifier)
+        (enum_variant_name
+          (identifier))
         (field_number
           (int_lit
             (octal_lit))))
       (enum_field
-        (identifier)
+        (enum_variant_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (enum_field
-        (identifier)
+        (enum_variant_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
