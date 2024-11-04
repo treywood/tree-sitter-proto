@@ -578,11 +578,26 @@
       "required": true,
       "types": [
         {
-          "type": "empty_statement",
+          "type": "identifier",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "oneof_body",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "oneof_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "empty_statement",
           "named": true
         },
         {
@@ -769,19 +784,34 @@
       "required": true,
       "types": [
         {
-          "type": "empty_statement",
-          "named": true
-        },
-        {
           "type": "message_or_enum_type",
           "named": true
         },
         {
-          "type": "option",
+          "type": "rpc_body",
           "named": true
         },
         {
           "type": "rpc_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "rpc_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "option",
           "named": true
         }
       ]
@@ -811,6 +841,25 @@
       "required": true,
       "types": [
         {
+          "type": "service_body",
+          "named": true
+        },
+        {
+          "type": "service_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "service_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "empty_statement",
           "named": true
         },
@@ -820,10 +869,6 @@
         },
         {
           "type": "rpc",
-          "named": true
-        },
-        {
-          "type": "service_name",
           "named": true
         }
       ]

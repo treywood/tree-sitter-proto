@@ -1121,24 +1121,25 @@ service AnotherServiceWithNoBindings {
             (decimal_lit))))
       (oneof
         (identifier)
-        (oneof_field
-          (type
-            (message_or_enum_type
-              (identifier)
-              (identifier)
-              (identifier)))
-          (identifier)
-          (field_number
-            (int_lit
-              (decimal_lit))))
-        (empty_statement)
-        (oneof_field
-          (type)
-          (identifier)
-          (field_number
-            (int_lit
-              (decimal_lit))))
-        (empty_statement))
+        (oneof_body
+          (oneof_field
+            (type
+              (message_or_enum_type
+                (identifier)
+                (identifier)
+                (identifier)))
+            (identifier)
+            (field_number
+              (int_lit
+                (decimal_lit))))
+          (empty_statement)
+          (oneof_field
+            (type)
+            (identifier)
+            (field_number
+              (int_lit
+                (decimal_lit))))
+          (empty_statement)))
       (map_field
         (key_type)
         (type
@@ -1702,356 +1703,12 @@ service AnotherServiceWithNoBindings {
   (service
     (service_name
       (identifier))
-    (option
-      name: (option_name
-        (full_ident
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)))
-      value: (block_lit
-        (block_field
-          key: (identifier)
-          value: (string))
-        (block_field
-          key: (identifier)
-          value: (block_lit
-            (block_field
-              key: (identifier)
-              value: (string))
-            (block_field
-              key: (identifier)
-              value: (string))))))
-    (comment)
-    (comment)
-    (comment)
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier))
+    (service_body
       (option
         name: (option_name
           (full_ident
             (identifier)
             (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (comment)
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))
-          (block_field
-            key: (identifier)
-            value: (string))
-          (block_field
-            key: (identifier)
-            value: (block_lit
-              (block_field
-                key: (identifier)
-                value: (string))
-              (block_field
-                key: (identifier)
-                value: (string)))
-            value: (block_lit
-              (block_field
-                key: (identifier)
-                value: (string))
-              (block_field
-                key: (identifier)
-                value: (string)))))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (block_lit
-              (block_field
-                key: (identifier)
-                value: (block_lit
-                  (block_field
-                    key: (identifier)
-                    value: (string))
-                  (block_field
-                    key: (identifier)
-                    value: (block_lit))))
-              (block_field
-                key: (identifier)
-                value: (block_lit
-                  (block_field
-                    key: (identifier)
-                    value: (string))
-                  (block_field
-                    key: (identifier)
-                    value: (block_lit
-                      (block_field
-                        key: (identifier)
-                        value: (string))
-                      (block_field
-                        key: (identifier)
-                        value: (string))))))))
-          (block_field
-            key: (identifier)
-            value: (block_lit
-              (block_field
-                key: (identifier)
-                value: (string))
-              (block_field
-                key: (identifier)
-                value: (block_lit
-                  (block_field
-                    key: (identifier)
-                    value: (bool
-                      (true))))))))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (bool
-              (true)))
-          (comment)
-          (block_field
-            key: (identifier)
-            value: (block_lit
-              (block_field
-                key: (identifier)
-                value: (string))
-              (block_field
-                key: (identifier)
-                value: (string))))
-          (block_field
-            key: (identifier)
-            value: (block_lit)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (comment)
-    (comment)
-    (comment)
-    (comment)
-    (comment)
-    (comment)
-    (comment)
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
             (identifier)
             (identifier)
             (identifier)))
@@ -2067,46 +1724,213 @@ service AnotherServiceWithNoBindings {
                 value: (string))
               (block_field
                 key: (identifier)
-                value: (string))))
-          (block_field
-            key: (identifier)
+                value: (string))))))
+      (comment)
+      (comment)
+      (comment)
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
               (block_field
                 key: (identifier)
                 value: (string))))))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))
-          (block_field
-            key: (identifier)
-            value: (string))
-          (block_field
-            key: (identifier)
-            value: (string))
-          (block_field
-            key: (identifier)
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
               (block_field
                 key: (identifier)
                 value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (comment)
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (string))
+                  (block_field
+                    key: (identifier)
+                    value: (string)))
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (string))
+                  (block_field
+                    key: (identifier)
+                    value: (string))))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
               (block_field
                 key: (identifier)
                 value: (string))))
-          (block_field
-            key: (identifier)
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
-              (block_field
-                key: (identifier)
-                value: (string))
               (block_field
                 key: (identifier)
                 value: (block_lit
@@ -2118,19 +1942,7 @@ service AnotherServiceWithNoBindings {
                         value: (string))
                       (block_field
                         key: (identifier)
-                        value: (string))))))))
-          (block_field
-            key: (identifier)
-            value: (block_lit
-              (block_field
-                key: (identifier)
-                value: (string))
-              (block_field
-                key: (identifier)
-                value: (block_lit
-                  (block_field
-                    key: (identifier)
-                    value: (string))
+                        value: (block_lit))))
                   (block_field
                     key: (identifier)
                     value: (block_lit
@@ -2142,15 +1954,166 @@ service AnotherServiceWithNoBindings {
                         value: (block_lit
                           (block_field
                             key: (identifier)
-                            value: (int_lit
-                              (decimal_lit)))))))))))
-          (block_field
-            key: (identifier)
+                            value: (string))
+                          (block_field
+                            key: (identifier)
+                            value: (string))))))))
+              (block_field
+                key: (identifier)
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (string))
+                  (block_field
+                    key: (identifier)
+                    value: (block_lit
+                      (block_field
+                        key: (identifier)
+                        value: (bool
+                          (true)))))))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
             value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))))
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (bool
+                  (true)))
               (comment)
               (block_field
                 key: (identifier)
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (string))
+                  (block_field
+                    key: (identifier)
+                    value: (string))))
+              (block_field
+                key: (identifier)
+                value: (block_lit))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (comment)
+      (comment)
+      (comment)
+      (comment)
+      (comment)
+      (comment)
+      (comment)
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
                 value: (string))
+              (block_field
+                key: (identifier)
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (string))
+                  (block_field
+                    key: (identifier)
+                    value: (string))))
+              (block_field
+                key: (identifier)
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (string))))))
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (string))
+                  (block_field
+                    key: (identifier)
+                    value: (string))))
               (block_field
                 key: (identifier)
                 value: (block_lit
@@ -2165,307 +2128,374 @@ service AnotherServiceWithNoBindings {
                         value: (block_lit
                           (block_field
                             key: (identifier)
-                            value: (full_ident
-                              (identifier))))))))))))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier)))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string)))))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (message_or_enum_type
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))))))
+                            value: (string))
+                          (block_field
+                            key: (identifier)
+                            value: (string))))))))
+              (block_field
+                key: (identifier)
+                value: (block_lit
+                  (block_field
+                    key: (identifier)
+                    value: (string))
+                  (block_field
+                    key: (identifier)
+                    value: (block_lit
+                      (block_field
+                        key: (identifier)
+                        value: (string))
+                      (block_field
+                        key: (identifier)
+                        value: (block_lit
+                          (block_field
+                            key: (identifier)
+                            value: (string))
+                          (block_field
+                            key: (identifier)
+                            value: (block_lit
+                              (block_field
+                                key: (identifier)
+                                value: (int_lit
+                                  (decimal_lit)))))))))))
+              (block_field
+                key: (identifier)
+                value: (block_lit
+                  (comment)
+                  (block_field
+                    key: (identifier)
+                    value: (string))
+                  (block_field
+                    key: (identifier)
+                    value: (block_lit
+                      (block_field
+                        key: (identifier)
+                        value: (string))
+                      (block_field
+                        key: (identifier)
+                        value: (block_lit
+                          (block_field
+                            key: (identifier)
+                            value: (block_lit
+                              (block_field
+                                key: (identifier)
+                                value: (full_ident
+                                  (identifier)))))))))))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))))
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))))))))
   (comment)
   (service
     (service_name
       (identifier))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (option
-        name: (option_name
-          (full_ident
-            (identifier)
-            (identifier)
-            (identifier)))
-        value: (block_lit
-          (block_field
-            key: (identifier)
-            value: (string))))))
+    (service_body
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (identifier)
+                value: (string))))))))
   (service
     (service_name
       (identifier))
-    (rpc
-      (rpc_name
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier))
-      (message_or_enum_type
-        (identifier)
-        (identifier)
-        (identifier)))))
+    (service_body
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body)))))

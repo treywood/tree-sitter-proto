@@ -169,6 +169,10 @@ module.exports = grammar({
     oneof: $ => seq(
       'oneof',
       $.identifier,
+      $.oneof_body
+    ),
+
+    oneof_body: $ => seq(
       '{',
       repeat(choice(
         $.option,
@@ -290,6 +294,10 @@ module.exports = grammar({
     service: $ => seq(
       'service',
       $.service_name,
+      $.service_body,
+    ),
+
+    service_body: $ => seq(
       '{',
       repeat(choice(
         $.option,
@@ -313,17 +321,19 @@ module.exports = grammar({
       optional('stream'),
       $.message_or_enum_type,
       ')',
-      choice(
-        seq(
-          '{',
-          repeat(choice(
-            $.option,
-            $.empty_statement,
-          )),
-          '}',
-        ),
-        ';',
+      $.rpc_body
+    ),
+
+    rpc_body: $ => choice(
+      seq(
+        '{',
+        repeat(choice(
+          $.option,
+          $.empty_statement,
+        )),
+        '}',
       ),
+      ';',
     ),
 
     rpc_name: $ => $.identifier,
