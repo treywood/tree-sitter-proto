@@ -16,11 +16,11 @@
             "named": false
           },
           {
-            "type": "full_ident",
+            "type": "field_name",
             "named": true
           },
           {
-            "type": "identifier",
+            "type": "full_ident",
             "named": true
           }
         ]
@@ -258,6 +258,10 @@
       "required": true,
       "types": [
         {
+          "type": "field_name",
+          "named": true
+        },
+        {
           "type": "field_number",
           "named": true
         },
@@ -266,11 +270,22 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "field_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
           "named": true
         }
       ]
@@ -447,15 +462,15 @@
       "required": true,
       "types": [
         {
+          "type": "field_name",
+          "named": true
+        },
+        {
           "type": "field_number",
           "named": true
         },
         {
           "type": "field_options",
-          "named": true
-        },
-        {
-          "type": "identifier",
           "named": true
         },
         {
@@ -620,15 +635,15 @@
       "required": true,
       "types": [
         {
+          "type": "field_name",
+          "named": true
+        },
+        {
           "type": "field_number",
           "named": true
         },
         {
           "type": "field_options",
-          "named": true
-        },
-        {
-          "type": "identifier",
           "named": true
         },
         {

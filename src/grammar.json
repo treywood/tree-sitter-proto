@@ -425,6 +425,10 @@
       "type": "SYMBOL",
       "name": "identifier"
     },
+    "field_name": {
+      "type": "SYMBOL",
+      "name": "identifier"
+    },
     "extend": {
       "type": "SEQ",
       "members": [
@@ -484,7 +488,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "field_name"
         },
         {
           "type": "STRING",
@@ -634,7 +638,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "field_name"
         },
         {
           "type": "STRING",
@@ -700,7 +704,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "field_name"
         },
         {
           "type": "STRING",
@@ -1343,7 +1347,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "identifier"
+                "name": "field_name"
               },
               {
                 "type": "SEQ",

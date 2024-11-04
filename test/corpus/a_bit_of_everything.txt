@@ -115,46 +115,60 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
         (identifier)))
     value: (block_lit
       (block_field
-        key: (identifier)
+        key: (field_name
+          (identifier))
         value: (block_lit
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (string))
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (string))
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (block_lit
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))))))))
       (block_field
         key: (full_ident
@@ -162,55 +176,71 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
           (identifier)))
       (comment)
       (block_field
-        key: (identifier)
+        key: (field_name
+          (identifier))
         value: (block_lit
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (string))
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (string))))
       (block_field
-        key: (identifier)
+        key: (field_name
+          (identifier))
         value: (full_ident
           (identifier)))
       (block_field
-        key: (identifier)
+        key: (field_name
+          (identifier))
         value: (full_ident
           (identifier)))
       (block_field
-        key: (identifier)
+        key: (field_name
+          (identifier))
         value: (string))
       (block_field
-        key: (identifier)
+        key: (field_name
+          (identifier))
         value: (string))
       (block_field
-        key: (identifier)
+        key: (field_name
+          (identifier))
         value: (block_lit
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (block_lit
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (full_ident
                       (identifier)))))))))
       (block_field
-        key: (identifier)
+        key: (field_name
+          (identifier))
         value: (block_lit
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (block_lit)))))))))
 
 ================================================================================
@@ -723,7 +753,8 @@ service AnotherServiceWithNoBindings {
     (message_body
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
@@ -738,19 +769,24 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string
                   (escape_sequence)
                   (escape_sequence)))))))
@@ -758,7 +794,8 @@ service AnotherServiceWithNoBindings {
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))))
@@ -768,7 +805,8 @@ service AnotherServiceWithNoBindings {
     (message_body
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
@@ -783,20 +821,25 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
@@ -811,13 +854,16 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))))
   (comment)
   (message
@@ -834,30 +880,38 @@ service AnotherServiceWithNoBindings {
             (identifier)))
         value: (block_lit
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string)
                 value: (string)
                 value: (string))))
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (string
               (escape_sequence)
               (escape_sequence)
@@ -878,7 +932,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string
                   (escape_sequence)
                   (escape_sequence)
@@ -887,13 +942,15 @@ service AnotherServiceWithNoBindings {
           (comment)
           (field
             (type)
-            (identifier)
+            (field_name
+              (identifier))
             (field_number
               (int_lit
                 (decimal_lit))))
           (field
             (type)
-            (identifier)
+            (field_name
+              (identifier))
             (field_number
               (int_lit
                 (decimal_lit))))
@@ -921,7 +978,8 @@ service AnotherServiceWithNoBindings {
             (type
               (message_or_enum_type
                 (identifier)))
-            (identifier)
+            (field_name
+              (identifier))
             (field_number
               (int_lit
                 (decimal_lit)))
@@ -936,19 +994,22 @@ service AnotherServiceWithNoBindings {
                     (identifier)))
                 value: (block_lit
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))))))))
       (field
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
@@ -963,23 +1024,27 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (int_lit
                   (decimal_lit)))))))
       (field
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
@@ -994,71 +1059,84 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1066,7 +1144,8 @@ service AnotherServiceWithNoBindings {
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1075,7 +1154,8 @@ service AnotherServiceWithNoBindings {
           (message_or_enum_type
             (identifier)
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1085,37 +1165,43 @@ service AnotherServiceWithNoBindings {
             (identifier)
             (identifier)
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1128,14 +1214,16 @@ service AnotherServiceWithNoBindings {
                 (identifier)
                 (identifier)
                 (identifier)))
-            (identifier)
+            (field_name
+              (identifier))
             (field_number
               (int_lit
                 (decimal_lit))))
           (empty_statement)
           (oneof_field
             (type)
-            (identifier)
+            (field_name
+              (identifier))
             (field_number
               (int_lit
                 (decimal_lit))))
@@ -1145,14 +1233,16 @@ service AnotherServiceWithNoBindings {
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (map_field
         (key_type)
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1161,13 +1251,15 @@ service AnotherServiceWithNoBindings {
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1177,7 +1269,8 @@ service AnotherServiceWithNoBindings {
             (identifier)
             (identifier)
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1186,7 +1279,8 @@ service AnotherServiceWithNoBindings {
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1195,7 +1289,8 @@ service AnotherServiceWithNoBindings {
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
@@ -1210,17 +1305,20 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (comment)
       (field
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
@@ -1235,15 +1333,18 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (comment)
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
@@ -1258,17 +1359,20 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (comment)
       (field
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
@@ -1283,17 +1387,20 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (comment)
       (field
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
@@ -1308,14 +1415,17 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
@@ -1330,13 +1440,15 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (full_ident
                   (identifier)))))))
       (comment)
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
@@ -1352,7 +1464,8 @@ service AnotherServiceWithNoBindings {
       (comment)
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
@@ -1367,7 +1480,8 @@ service AnotherServiceWithNoBindings {
               (identifier)))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))))
@@ -1386,7 +1500,8 @@ service AnotherServiceWithNoBindings {
             (identifier)))
         value: (block_lit
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (string
               (escape_sequence)
               (escape_sequence)
@@ -1395,67 +1510,78 @@ service AnotherServiceWithNoBindings {
       (comment)
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1463,31 +1589,36 @@ service AnotherServiceWithNoBindings {
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))))
@@ -1501,7 +1632,8 @@ service AnotherServiceWithNoBindings {
             (identifier)
             (identifier)
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))))
@@ -1511,7 +1643,8 @@ service AnotherServiceWithNoBindings {
     (message_body
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))))
@@ -1521,7 +1654,8 @@ service AnotherServiceWithNoBindings {
     (message_body
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1529,7 +1663,8 @@ service AnotherServiceWithNoBindings {
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))))
@@ -1561,7 +1696,8 @@ service AnotherServiceWithNoBindings {
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1572,7 +1708,8 @@ service AnotherServiceWithNoBindings {
             (identifier)
             (identifier)
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))))
@@ -1591,14 +1728,16 @@ service AnotherServiceWithNoBindings {
       (comment)
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (comment)
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1609,7 +1748,8 @@ service AnotherServiceWithNoBindings {
             (identifier)
             (identifier)
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))))
@@ -1629,7 +1769,8 @@ service AnotherServiceWithNoBindings {
       (comment)
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1638,7 +1779,8 @@ service AnotherServiceWithNoBindings {
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1647,7 +1789,8 @@ service AnotherServiceWithNoBindings {
       (comment)
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))))
@@ -1666,7 +1809,8 @@ service AnotherServiceWithNoBindings {
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))
@@ -1686,7 +1830,8 @@ service AnotherServiceWithNoBindings {
             (identifier)
             (identifier)
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -1694,7 +1839,8 @@ service AnotherServiceWithNoBindings {
       (comment)
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))))
@@ -1714,16 +1860,20 @@ service AnotherServiceWithNoBindings {
             (identifier)))
         value: (block_lit
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (string))
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (comment)
       (comment)
@@ -1744,7 +1894,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -1762,10 +1913,12 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (comment)
       (rpc
@@ -1784,10 +1937,12 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -1805,10 +1960,12 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -1832,30 +1989,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
-                value: (string))))))
-      (rpc
-        (rpc_name
-          (identifier))
-        (message_or_enum_type
-          (identifier))
-        (message_or_enum_type
-          (identifier)
-          (identifier)
-          (identifier))
-        (rpc_body
-          (option
-            name: (option_name
-              (full_ident
-                (identifier)
-                (identifier)
-                (identifier)))
-            value: (block_lit
-              (block_field
-                key: (identifier)
-                value: (string))
-              (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -1875,26 +2010,58 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
+                value: (string))))))
+      (rpc
+        (rpc_name
+          (identifier))
+        (message_or_enum_type
+          (identifier))
+        (message_or_enum_type
+          (identifier)
+          (identifier)
+          (identifier))
+        (rpc_body
+          (option
+            name: (option_name
+              (full_ident
+                (identifier)
+                (identifier)
+                (identifier)))
+            value: (block_lit
+              (block_field
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
+                value: (string))
+              (block_field
+                key: (field_name
+                  (identifier))
                 value: (block_lit
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string)))
                 value: (block_lit
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))))))))
       (rpc
         (rpc_name
@@ -1920,7 +2087,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))
           (option
             name: (option_name
@@ -1932,43 +2100,56 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (block_lit
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (block_lit
                       (block_field
-                        key: (identifier)
+                        key: (field_name
+                          (identifier))
                         value: (string))
                       (block_field
-                        key: (identifier)
+                        key: (field_name
+                          (identifier))
                         value: (block_lit))))
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (block_lit
                       (block_field
-                        key: (identifier)
+                        key: (field_name
+                          (identifier))
                         value: (string))
                       (block_field
-                        key: (identifier)
+                        key: (field_name
+                          (identifier))
                         value: (block_lit
                           (block_field
-                            key: (identifier)
+                            key: (field_name
+                              (identifier))
                             value: (string))
                           (block_field
-                            key: (identifier)
+                            key: (field_name
+                              (identifier))
                             value: (string))))))))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (block_lit
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (block_lit
                       (block_field
-                        key: (identifier)
+                        key: (field_name
+                          (identifier))
                         value: (bool
                           (true)))))))))))
       (rpc
@@ -1989,7 +2170,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))
           (option
             name: (option_name
@@ -2001,21 +2183,26 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (bool
                   (true)))
               (comment)
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (block_lit
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (block_lit))))))
       (rpc
         (rpc_name
@@ -2033,7 +2220,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (comment)
       (comment)
@@ -2070,22 +2258,28 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (block_lit
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (block_lit
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))))))
           (option
             name: (option_name
@@ -2097,87 +2291,114 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (block_lit
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (block_lit
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (block_lit
                       (block_field
-                        key: (identifier)
+                        key: (field_name
+                          (identifier))
                         value: (block_lit
                           (block_field
-                            key: (identifier)
+                            key: (field_name
+                              (identifier))
                             value: (string))
                           (block_field
-                            key: (identifier)
+                            key: (field_name
+                              (identifier))
                             value: (string))))))))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (block_lit
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (block_lit
                       (block_field
-                        key: (identifier)
+                        key: (field_name
+                          (identifier))
                         value: (string))
                       (block_field
-                        key: (identifier)
+                        key: (field_name
+                          (identifier))
                         value: (block_lit
                           (block_field
-                            key: (identifier)
+                            key: (field_name
+                              (identifier))
                             value: (string))
                           (block_field
-                            key: (identifier)
+                            key: (field_name
+                              (identifier))
                             value: (block_lit
                               (block_field
-                                key: (identifier)
+                                key: (field_name
+                                  (identifier))
                                 value: (int_lit
                                   (decimal_lit)))))))))))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (block_lit
                   (comment)
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (string))
                   (block_field
-                    key: (identifier)
+                    key: (field_name
+                      (identifier))
                     value: (block_lit
                       (block_field
-                        key: (identifier)
+                        key: (field_name
+                          (identifier))
                         value: (string))
                       (block_field
-                        key: (identifier)
+                        key: (field_name
+                          (identifier))
                         value: (block_lit
                           (block_field
-                            key: (identifier)
+                            key: (field_name
+                              (identifier))
                             value: (block_lit
                               (block_field
-                                key: (identifier)
+                                key: (field_name
+                                  (identifier))
                                 value: (full_ident
                                   (identifier)))))))))))))))
       (rpc
@@ -2196,10 +2417,12 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -2233,7 +2456,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -2255,7 +2479,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -2275,10 +2500,12 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -2298,10 +2525,12 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -2319,7 +2548,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -2337,7 +2567,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -2355,10 +2586,12 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -2380,7 +2613,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))
           (option
             name: (option_name
@@ -2392,7 +2626,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -2413,7 +2648,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -2434,7 +2670,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -2454,7 +2691,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))))
   (comment)
   (service
@@ -2481,7 +2719,8 @@ service AnotherServiceWithNoBindings {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))))
   (service
     (service_name

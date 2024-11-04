@@ -129,6 +129,7 @@ module.exports = grammar({
     ),
 
     message_name: $ => $.identifier,
+    field_name: $ => $.identifier,
 
     extend: $ => seq(
       'extend',
@@ -146,7 +147,7 @@ module.exports = grammar({
 
       optional('repeated'),
       $.type,
-      $.identifier,
+      $.field_name,
       '=',
       $.field_number,
       optional(seq('[', $.field_options, ']')),
@@ -184,7 +185,7 @@ module.exports = grammar({
 
     oneof_field: $ => seq(
       $.type,
-      $.identifier,
+      $.field_name,
       '=',
       $.field_number,
       optional(seq('[', $.field_options, ']')),
@@ -200,7 +201,7 @@ module.exports = grammar({
       ',',
       $.type,
       '>',
-      $.identifier,
+      $.field_name,
       '=',
       $.field_number,
       optional(seq('[', $.field_options, ']')),
@@ -371,7 +372,7 @@ module.exports = grammar({
     ),
 
     block_field: $ => seq(
-      field('key', choice($.identifier, seq('[', $.full_ident, ']'))),
+      field('key', choice($.field_name, seq('[', $.full_ident, ']'))),
       optional(':'),
       field('value', choice($._constant, array_of($._constant)))
     ),

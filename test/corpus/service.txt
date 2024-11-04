@@ -38,16 +38,20 @@ service ABitOfEverythingService {
             (identifier)))
         value: (block_lit
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (string))
           (block_field
-            key: (identifier)
+            key: (field_name
+              (identifier))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string))))))
       (rpc
         (rpc_name
@@ -65,5 +69,6 @@ service ABitOfEverythingService {
                 (identifier)))
             value: (block_lit
               (block_field
-                key: (identifier)
+                key: (field_name
+                  (identifier))
                 value: (string)))))))))
