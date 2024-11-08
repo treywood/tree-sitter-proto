@@ -1,5 +1,6 @@
 [
   "syntax"
+  "edition"
   "package"
   "option"
   "import"
@@ -7,11 +8,16 @@
   "rpc"
   "returns"
   "message"
+  "map"
   "enum"
   "oneof"
   "repeated"
+  "optional"
+  "required"
   "reserved"
   "to"
+  "stream"
+  "extend"
 ] @keyword
 
 [
