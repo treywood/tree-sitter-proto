@@ -1,5 +1,83 @@
 [
   {
+    "type": "block_field",
+    "named": true,
+    "fields": {
+      "key": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "field_name",
+            "named": true
+          },
+          {
+            "type": "full_ident",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "block_lit",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "float_lit",
+            "named": true
+          },
+          {
+            "type": "full_ident",
+            "named": true
+          },
+          {
+            "type": "int_lit",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "block_lit",
     "named": true,
     "fields": {},
@@ -8,15 +86,7 @@
       "required": false,
       "types": [
         {
-          "type": "constant",
-          "named": true
-        },
-        {
-          "type": "full_ident",
-          "named": true
-        },
-        {
-          "type": "identifier",
+          "type": "block_field",
           "named": true
         }
       ]
@@ -42,38 +112,19 @@
     }
   },
   {
-    "type": "constant",
+    "type": "edition",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "block_lit",
-          "named": true
-        },
-        {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "float_lit",
-          "named": true
-        },
-        {
-          "type": "full_ident",
-          "named": true
-        },
-        {
-          "type": "int_lit",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
+    "fields": {
+      "year": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -136,15 +187,15 @@
       "required": true,
       "types": [
         {
-          "type": "enum_value_option",
+          "type": "enum_variant_name",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "field_number",
           "named": true
         },
         {
-          "type": "int_lit",
+          "type": "field_options",
           "named": true
         }
       ]
@@ -166,21 +217,13 @@
     }
   },
   {
-    "type": "enum_value_option",
+    "type": "enum_variant_name",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "constant",
-          "named": true
-        },
-        {
-          "type": "full_ident",
-          "named": true
-        },
         {
           "type": "identifier",
           "named": true
@@ -231,6 +274,10 @@
       "required": true,
       "types": [
         {
+          "type": "field_name",
+          "named": true
+        },
+        {
           "type": "field_number",
           "named": true
         },
@@ -239,11 +286,22 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "field_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
           "named": true
         }
       ]
@@ -286,24 +344,55 @@
   {
     "type": "field_option",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "constant",
-          "named": true
-        },
-        {
-          "type": "full_ident",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "option_name",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "block_lit",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "float_lit",
+            "named": true
+          },
+          {
+            "type": "full_ident",
+            "named": true
+          },
+          {
+            "type": "int_lit",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -389,15 +478,15 @@
       "required": true,
       "types": [
         {
+          "type": "field_name",
+          "named": true
+        },
+        {
           "type": "field_number",
           "named": true
         },
         {
           "type": "field_options",
-          "named": true
-        },
-        {
-          "type": "identifier",
           "named": true
         },
         {
@@ -520,11 +609,26 @@
       "required": true,
       "types": [
         {
-          "type": "empty_statement",
+          "type": "identifier",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "oneof_body",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "oneof_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "empty_statement",
           "named": true
         },
         {
@@ -547,15 +651,15 @@
       "required": true,
       "types": [
         {
+          "type": "field_name",
+          "named": true
+        },
+        {
           "type": "field_number",
           "named": true
         },
         {
           "type": "field_options",
-          "named": true
-        },
-        {
-          "type": "identifier",
           "named": true
         },
         {
@@ -568,15 +672,65 @@
   {
     "type": "option",
     "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "option_name",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "block_lit",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "float_lit",
+            "named": true
+          },
+          {
+            "type": "full_ident",
+            "named": true
+          },
+          {
+            "type": "int_lit",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "option_name",
+    "named": true,
     "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "constant",
-          "named": true
-        },
         {
           "type": "full_ident",
           "named": true
@@ -661,19 +815,34 @@
       "required": true,
       "types": [
         {
-          "type": "empty_statement",
-          "named": true
-        },
-        {
           "type": "message_or_enum_type",
           "named": true
         },
         {
-          "type": "option",
+          "type": "rpc_body",
           "named": true
         },
         {
           "type": "rpc_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "rpc_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "option",
           "named": true
         }
       ]
@@ -703,6 +872,25 @@
       "required": true,
       "types": [
         {
+          "type": "service_body",
+          "named": true
+        },
+        {
+          "type": "service_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "service_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "empty_statement",
           "named": true
         },
@@ -712,10 +900,6 @@
         },
         {
           "type": "rpc",
-          "named": true
-        },
-        {
-          "type": "service_name",
           "named": true
         }
       ]
@@ -744,6 +928,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "edition",
+          "named": true
+        },
         {
           "type": "empty_statement",
           "named": true
@@ -904,6 +1092,10 @@
   },
   {
     "type": "double",
+    "named": false
+  },
+  {
+    "type": "edition",
     "named": false
   },
   {

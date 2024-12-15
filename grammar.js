@@ -1,7 +1,7 @@
 const
   letter = /[a-zA-Z]/,
-  decimal_digit = /[0-9]/
-  octal_digit = /[0-7]/
+  decimal_digit = /[0-9]/,
+  octal_digit = /[0-7]/,
   hex_digit = /[0-9A-Fa-f]/
 
 function array_of(content) {
@@ -21,7 +21,7 @@ module.exports = grammar({
     // proto = syntax { import | package | option | topLevelDef | emptyStatement }
     // topLevelDef = message | enum | service
     source_file: $ => seq(
-      optional($.syntax),
+      optional(choice($.syntax, $.edition)),
       optional(repeat(choice(
         $.import,
         $.package,
@@ -37,7 +37,9 @@ module.exports = grammar({
     empty_statement: _ => ';',
 
     // syntax = "syntax" "=" quote "proto3" quote ";"
-    syntax: $ => seq('syntax', '=', choice('"proto3"', '"proto2"'), ';'),
+    syntax: _ => seq('syntax', '=', choice('"proto3"', '"proto2"'), ';'),
+
+    edition: $ => seq('edition', '=', field('year', $.string), ';'),
 
     // import = "import" [ "weak" | "public" ] strLit ";"
     import: $ => seq(
@@ -58,21 +60,18 @@ module.exports = grammar({
     // optionName = ( ident | "(" fullIdent ")" ) { "." ident }
     option: $ => seq(
       'option',
-      $._option_name,
+      field('name', $.option_name),
       '=',
-      $.constant,
+      field('value', $._constant),
       ';',
     ),
 
-    _option_name: $ => seq(
-      choice(
-        $.identifier,
+    option_name: $ => choice(
+      $.identifier,
+      seq(
         seq('(', $.full_ident, ')'),
+        repeat(seq('.', $.identifier)),
       ),
-      repeat(seq(
-        '.',
-        $.identifier,
-      )),
     ),
 
     // enum = "enum" enumName enumBody
@@ -99,23 +98,11 @@ module.exports = grammar({
     ),
 
     enum_field: $ => seq(
-      $.identifier,
+      $.enum_variant_name,
       '=',
-      optional('-'),
-      $.int_lit,
-      optional(seq(
-        '[',
-        $.enum_value_option,
-        repeat(seq(',', $.enum_value_option)),
-        ']',
-      )),
+      $.field_number,
+      optional(seq('[', $.field_options,']')),
       ';',
-    ),
-
-    enum_value_option: $ => seq(
-      $._option_name,
-      '=',
-      $.constant,
     ),
 
     // message = "message" messageName messageBody
@@ -144,6 +131,7 @@ module.exports = grammar({
     ),
 
     message_name: $ => $.identifier,
+    field_name: $ => $.identifier,
 
     extend: $ => seq(
       'extend',
@@ -157,11 +145,11 @@ module.exports = grammar({
     field: $ => seq(
       // This isn't allowed according to the spec and yet the proto3 compiler
       // accepts it so we put it here for parsing.
-      optional(choice('optional','required')),
+      optional(choice('optional', 'required')),
 
       optional('repeated'),
       $.type,
-      $.identifier,
+      $.field_name,
       '=',
       $.field_number,
       optional(seq('[', $.field_options, ']')),
@@ -174,9 +162,9 @@ module.exports = grammar({
     ),
 
     field_option: $ => seq(
-      $._option_name,
+      field('name', $.option_name),
       '=',
-      $.constant,
+      field('value', $._constant),
     ),
 
     // oneof = "oneof" oneofName "{" { option | oneofField | emptyStatement } "}"
@@ -184,6 +172,10 @@ module.exports = grammar({
     oneof: $ => seq(
       'oneof',
       $.identifier,
+      $.oneof_body
+    ),
+
+    oneof_body: $ => seq(
       '{',
       repeat(choice(
         $.option,
@@ -195,7 +187,7 @@ module.exports = grammar({
 
     oneof_field: $ => seq(
       $.type,
-      $.identifier,
+      $.field_name,
       '=',
       $.field_number,
       optional(seq('[', $.field_options, ']')),
@@ -211,14 +203,14 @@ module.exports = grammar({
       ',',
       $.type,
       '>',
-      $.identifier,
+      $.field_name,
       '=',
       $.field_number,
       optional(seq('[', $.field_options, ']')),
       ';',
     ),
 
-    key_type: $ => choice(
+    key_type: _ => choice(
       'int32',
       'int64',
       'uint32',
@@ -305,6 +297,10 @@ module.exports = grammar({
     service: $ => seq(
       'service',
       $.service_name,
+      $.service_body,
+    ),
+
+    service_body: $ => seq(
       '{',
       repeat(choice(
         $.option,
@@ -328,23 +324,26 @@ module.exports = grammar({
       optional('stream'),
       $.message_or_enum_type,
       ')',
-      choice(
-        seq(
-          '{',
-          repeat(choice(
-            $.option,
-            $.empty_statement,
-          )),
-          '}',
-        ),
-        ';',
+      $.rpc_body
+    ),
+
+    rpc_body: $ => choice(
+      seq(
+        '{',
+        repeat(choice(
+          $.option,
+          $.empty_statement,
+        )),
+        '}',
       ),
+      ';',
     ),
 
     rpc_name: $ => $.identifier,
+    enum_variant_name: $ => $.identifier,
 
     // constant = fullIdent | ( [ "-" | "+" ] intLit ) | ( [ "-" | "+" ] floatLit ) | strLit | boolLit
-    constant: $ => choice(
+    _constant: $ => choice(
       $.full_ident,
       seq(
         optional(choice('-', '+')),
@@ -368,29 +367,22 @@ module.exports = grammar({
     // with protoc.
     block_lit: $ => seq(
       '{',
-      repeat(seq(
-        choice(
-          $.identifier,
-          seq('[', $.full_ident, ']'),
-        ),
-        optional(':'),
-        choice(
-          $.constant,
-          array_of($.constant),
-        ),
-        optional(choice(',', ';')),
-      )),
+      repeat(
+        seq($.block_field, optional(choice(',', ';')))
+      ),
       '}',
     ),
 
+    block_field: $ => seq(
+      field('key', choice($.field_name, seq('[', $.full_ident, ']'))),
+      optional(':'),
+      field('value', choice($._constant, array_of($._constant)))
+    ),
+
     // ident = letter { letter | decimalDigit | "_" }
-    identifier: $ => token(seq(
+    identifier: _ => token(seq(
       choice(letter, '_'),
-      optional(repeat(choice(
-        letter,
-        decimal_digit,
-        '_',
-      ))),
+      repeat(choice(letter, decimal_digit, '_')),
     )),
 
     _identifier_or_string: $ => choice($.identifier, $.string),
@@ -398,13 +390,13 @@ module.exports = grammar({
     // fullIdent = ident { "." ident }
     full_ident: $ => seq(
       $.identifier,
-      optional(repeat(seq('.', $.identifier))),
+      repeat(seq('.', $.identifier)),
     ),
 
     // boolLit = "true" | "false"
     bool: $ => choice($.true, $.false),
-    true: $ => 'true',
-    false: $ => 'false',
+    true: _ => 'true',
+    false: _ => 'false',
 
     // intLit     = decimalLit | octalLit | hexLit
     int_lit: $ => choice(
@@ -414,84 +406,63 @@ module.exports = grammar({
     ),
 
     // decimalLit = ( "1" … "9" ) { decimalDigit }
-    decimal_lit: $ => token(seq(
+    decimal_lit: _ => token(seq(
       /[1-9]/,
       repeat(decimal_digit),
     )),
 
     // octalLit   = "0" { octalDigit }
-    octal_lit: $ => token(seq(
+    octal_lit: _ => token(seq(
       '0',
       repeat(octal_digit),
     )),
 
     // hexLit     = "0" ( "x" | "X" ) hexDigit { hexDigit }
-    hex_lit: $ => token(seq(
+    hex_lit: _ => token(seq(
       '0',
       choice('x', 'X'),
-      hex_digit,
-      repeat(hex_digit),
+      repeat1(hex_digit),
     )),
 
     // floatLit = ( decimals "." [ decimals ] [ exponent ] | decimals exponent | "."decimals [ exponent ] ) | "inf" | "nan"
     // decimals  = decimalDigit { decimalDigit }
     // exponent  = ( "e" | "E" ) [ "+" | "-" ] decimals
-    float_lit: $ => {
-      const decimals = seq(
-        decimal_digit,
-        repeat(decimal_digit),
-      );
-
+    float_lit: _ => {
+      const decimals = repeat1(decimal_digit);
       const exponent = seq(
         choice('e', 'E'),
         optional(choice('+', '-')),
         decimals,
       );
 
-      return token(choice(
-        seq(
-          decimals,
-          '.',
-          optional(decimals),
-          optional(exponent),
-        ),
-        seq(
-          decimals,
-          exponent,
-        ),
-        seq(
-          '.',
-          decimals,
-          optional(exponent),
-        ),
-        'inf',
-        'nan',
-      ));
+      return token(
+        choice(
+          seq(decimals, '.', optional(decimals), optional(exponent)),
+          seq(decimals, exponent),
+          seq('.', decimals, optional(exponent)),
+          'inf',
+          'nan',
+        )
+      );
     },
 
-    string: $ => repeat1(
-      choice(
-        seq(
-          '"',
+    string: $ => {
+      function str(delimiter) {
+        const pattern = new RegExp(`[^${delimiter}\\\\]+`);
+        return seq(
+          delimiter,
           repeat(choice(
-            token.immediate(prec(1, /[^"\\]+/)),
+            token.immediate(prec(1, pattern)),
             $.escape_sequence
           )),
-          '"'
-        ),
+          delimiter,
+        );
+      }
 
-        seq(
-          "'",
-          repeat(choice(
-            token.immediate(prec(1, /[^'\\]+/)),
-            $.escape_sequence
-          )),
-          "'",
-        ),
-      )
-    ),
+      return repeat1(choice(str("'"), str('"')));
+    },
 
-    escape_sequence: $ => token.immediate(seq(
+    escape_sequence: _ => token.immediate(seq(
       '\\',
       choice(
         /[^xuU]/,
@@ -502,13 +473,9 @@ module.exports = grammar({
       )
     )),
 
-    comment: $ => token(choice(
+    comment: _ => token(choice(
       seq('//', /.*/),
-      seq(
-        '/*',
-        /[^*]*\*+([^/*][^*]*\*+)*/,
-        '/'
-      )
+      seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/')
     ))
   }
 });

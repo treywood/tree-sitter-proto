@@ -22,27 +22,34 @@ enum EnumAllowingAlias {
       (identifier))
     (enum_body
       (option
-        (identifier)
-        (constant
-          (bool
-            (true))))
+        name: (option_name
+          (identifier))
+        value: (bool
+          (true)))
       (enum_field
-        (identifier)
-        (int_lit
-          (octal_lit)))
+        (enum_variant_name
+          (identifier))
+        (field_number
+          (int_lit
+            (octal_lit))))
       (enum_field
-        (identifier)
-        (int_lit
-          (decimal_lit)))
+        (enum_variant_name
+          (identifier))
+        (field_number
+          (int_lit
+            (decimal_lit))))
       (enum_field
-        (identifier)
-        (int_lit
-          (decimal_lit))
-        (enum_value_option
-          (full_ident
-            (identifier))
-          (constant
-            (string))))
+        (enum_variant_name
+          (identifier))
+        (field_number
+          (int_lit
+            (decimal_lit)))
+        (field_options
+          (field_option
+            name: (option_name
+              (full_ident
+                (identifier)))
+            value: (string))))
       (reserved
         (ranges
           (range

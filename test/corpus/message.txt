@@ -39,24 +39,25 @@ extend another.Message {
       (identifier))
     (message_body
       (option
-        (full_ident
+        name: (option_name
+          (full_ident
+            (identifier))
           (identifier))
-        (identifier)
-        (constant
-          (bool
-            (true))))
+        value: (bool
+          (true)))
       (option
-        (full_ident
-          (identifier))
-        (constant
-          (string)))
+        name: (option_name
+          (full_ident
+            (identifier)))
+        value: (string))
       (message
         (message_name
           (identifier))
         (message_body
           (field
             (type)
-            (identifier)
+            (field_name
+              (identifier))
             (field_number
               (int_lit
                 (decimal_lit))))))
@@ -64,7 +65,8 @@ extend another.Message {
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -72,20 +74,23 @@ extend another.Message {
         (type
           (message_or_enum_type
             (identifier)))
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (map_field
         (key_type)
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit))))
@@ -97,7 +102,8 @@ extend another.Message {
         (message_body
           (field
             (type)
-            (identifier)
+            (field_name
+              (identifier))
             (field_number
               (int_lit
                 (decimal_lit))))))
@@ -126,7 +132,8 @@ extend another.Message {
     (message_body
       (field
         (type)
-        (identifier)
+        (field_name
+          (identifier))
         (field_number
           (int_lit
             (decimal_lit)))))))
